@@ -1,0 +1,37 @@
+---
+kubeconfig: /home/vagrant/install/here
+
+# openshift-ignition vars:
+
+# Local Resources:
+cluster_config_dir: /home/vagrant/vmware_static_ocp4_provisioing/files/cluster1
+
+# Infrastructure
+image_registry: bastion.test.com:5000/ocp4/openshift4
+
+# Cluster Network:
+domain: test.com
+cluster_name: cluster
+
+# OperatorHub
+olm_image: 'server.test.com:5000/olm-mirror/redhat-operator-index:v4.6'
+
+#etcd_backups
+etcd_nfs_size: 5Gi
+etcd_nfs_path: /data/ocp-pv/etcd-backups
+etcd_nfs_server: nfsservername.test.com
+
+#etcd_backup_cron_schedule:
+#logrotate_schedule:
+
+# Image Registry
+registry_nfs_server: nfsservername.test.com
+registry_nfs_path: /data/ocp-pv/image-registry
+registry_nfs_size: 100Gi
+
+# Custom Certificates:
+api_tls_crt: "/home/vagrant/vmware_static_ocp4_provisioing/files/certs/api.cer"
+api_tls_key: "/home/vagrant/vmware_static_ocp4_provisioing/files/certs/api.pem"
+root_ca: "/home/vagrant/vmware_static_ocp4_provisioing/files/certs/cert-bundle.crt"
+ingress_tls_crt: "/home/vagrant/vmware_static_ocp4_provisioing/files/certs/ingress.cer"
+ingress_tls_key: "/home/vagrant/vmware_static_ocp4_provisioing/files/certs/ingress.pem"
